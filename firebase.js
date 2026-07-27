@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "DÁN_API_KEY",
-  authDomain: "DÁN_AUTH_DOMAIN",
-  projectId: "DÁN_PROJECT_ID",
-  storageBucket: "DÁN_STORAGE_BUCKET",
-  messagingSenderId: "DÁN_MESSAGING_ID",
-  appId: "DÁN_APP_ID"
+  apiKey: "AIzaSyAnhuCn6qsiHYsQQwDAg5IP9H9OXYTT6Ts",
+  authDomain: "binshop-8006f.firebaseapp.com",
+  projectId: "binshop-8006f",
+  storageBucket: "binshop-8006f.firebasestorage.app",
+  messagingSenderId: "1093646474699",
+  appId: "1:1093646474699:web:db5d5593ff1f3554562a4e"
 };
 
 const app = initializeApp(firebaseConfig);
