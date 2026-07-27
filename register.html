@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#111;
+font-family:Arial;
+}
+
+.box{
+width:85%;
+max-width:400px;
+padding:25px;
+background:white;
+border-radius:15px;
+text-align:center;
+}
+
+input,button{
+width:90%;
+padding:15px;
+margin:10px;
+font-size:18px;
+border-radius:10px;
+}
+
+button{
+background:black;
+color:white;
+border:0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Đăng ký</h2>
+
+<input id="email" placeholder="Email">
+
+<input id="pass" type="password" placeholder="Mật khẩu">
+
+<button onclick="register()">Đăng ký</button>
+
+<p id="msg"></p>
+
+<a href="login.html">Đã có tài khoản? Đăng nhập</a>
+
+</div>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import {
+createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+window.register = async function(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("pass").value;
+
+try{
+
+await createUserWithEmailAndPassword(auth,email,pass);
+
+document.getElementById("msg").innerHTML=
+"Đăng ký thành công!";
+
+}
+
+catch(e){
+
+document.getElementById("msg").innerHTML=e.message;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
